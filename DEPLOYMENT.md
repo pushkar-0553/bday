@@ -79,6 +79,16 @@ After deployment, your site will be available at:
 - Or your custom domain if configured
 
 ## 🐛 Troubleshooting
+
+### MIME Type Error Fix
+If you get "Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of text/html":
+
+1. **Clear Vercel cache**: Go to Project Settings → Build & Development Settings → Clear Cache
+2. **Redeploy**: Push a new commit or trigger a new deployment
+3. **Check vercel.json**: Ensure proper routing configuration is in place
+4. **Verify base path**: Should be `base: '/'` in vite.config.js
+
+### General Issues
 If build fails:
 1. Check Vercel build logs
 2. Ensure all dependencies are in package.json
